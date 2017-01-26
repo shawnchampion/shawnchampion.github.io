@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+    
+    <entry>
+      <title><![CDATA[Install Node-v6.9.4 and Hexo-v3.2.2 on Ubuntu 16.04]]></title>
+      <url>%2F2017%2F01%2F26%2FInstall-Node-v6-9-4-and-Hexo-v3-2-2-on-Ubuntu-16-04%2F</url>
+      <content type="text"><![CDATA[This tutorial will show you how to install node and hexo on your ubuntu and deploy a blog on github. Install Node.js and npmDownload the latest package on the official websiteClick here to download node-v6.9.4-linux-x64.tar.xz or you can visit download page for other suitalbel version. Extract the package and installExtract package and move to /opt directory to install. tar -xJf node-v6.9.4-linux-x64.tar.xz sudo mv node-v6.9.4-linux-x64 /opt Add softlinks for node and npm (package manager for JavaScript) sudo ln -s /opt/node-v6.9.4-linux-x64/bin/node /usr/local/bin/node sudo ln -s /opt/node-v6.9.4-linux-x64/bin/npm /usr/local/bin/npm Now you can run node -v and npm -v to check it.You can find v6.9.43.10.10 on your terminal if installed correctly Install Git]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>%2F2017%2F01%2F25%2Fhello-world%2F</url>
+      <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    </entry>
+
+    
+  
+  
+</search>
