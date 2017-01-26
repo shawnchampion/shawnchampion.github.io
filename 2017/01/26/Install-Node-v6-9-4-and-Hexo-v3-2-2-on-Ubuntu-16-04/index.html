@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/01/26/Install-Node-v6-9-4-and-Hexo-v3-2-2-on-Ubuntu-16-04/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="This tutorial will show you how to install node and hexo on your ubuntu and deploy a blog on github.">
-<meta property="og:updated_time" content="2017-01-26T05:38:06.519Z">
+<meta property="og:updated_time" content="2017-01-26T15:57:01.676Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Install Node-v6.9.4 and Hexo-v3.2.2 on Ubuntu 16.04">
 <meta name="twitter:description" content="This tutorial will show you how to install node and hexo on your ubuntu and deploy a blog on github.">
@@ -350,18 +350,58 @@
       
         <p>This tutorial will show you how to install node and hexo on your ubuntu and deploy a blog on github.<br><a id="more"></a></p>
 <h1 id="Install-Node-js-and-npm"><a href="#Install-Node-js-and-npm" class="headerlink" title="Install Node.js and npm"></a>Install Node.js and npm</h1><h2 id="Download-the-latest-package-on-the-official-website"><a href="#Download-the-latest-package-on-the-official-website" class="headerlink" title="Download the latest package on the official website"></a>Download the latest package on the official website</h2><p>Click <a href="https://nodejs.org/dist/v6.9.4/node-v6.9.4-linux-x64.tar.xz" target="_blank" rel="external">here</a> to download <code>node-v6.9.4-linux-x64.tar.xz</code> or you can visit <a href="https://nodejs.org/en/download/" target="_blank" rel="external">download page</a> for other suitalbel version.</p>
-<h2 id="Extract-the-package-and-install"><a href="#Extract-the-package-and-install" class="headerlink" title="Extract the package and install"></a>Extract the package and install</h2><p>Extract package and move to <code>/opt</code> directory to install.</p>
-<pre><code>tar -xJf node-v6.9.4-linux-x64.tar.xz
-sudo mv node-v6.9.4-linux-x64 /opt
-</code></pre><p>Add softlinks for node and npm (package manager for JavaScript)</p>
-<pre><code>sudo ln -s /opt/node-v6.9.4-linux-x64/bin/node /usr/local/bin/node
-sudo ln -s /opt/node-v6.9.4-linux-x64/bin/npm /usr/local/bin/npm
-</code></pre><p>Now you can run <code>node -v</code> and <code>npm -v</code> to check it.You can find</p>
-<blockquote>
-<p>v6.9.4<br>3.10.10</p>
-</blockquote>
-<p>on your terminal if installed correctly</p>
-<h1 id="Install-Git"><a href="#Install-Git" class="headerlink" title="Install Git"></a>Install Git</h1>
+<h2 id="Extract-the-package-and-install"><a href="#Extract-the-package-and-install" class="headerlink" title="Extract the package and install"></a>Extract the package and install</h2><p>Enter the directory you download it. Extract package and move to <code>/opt</code> directory to install.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tar -xJf node-v6.9.4-linux-x64.tar.xz</div><div class="line">sudo mv node-v6.9.4-linux-x64 /opt</div></pre></td></tr></table></figure></p>
+<p>Add softlinks for node and npm (package manager for JavaScript)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo ln -s /opt/node-v6.9.4-linux-x64/bin/node /usr/local/bin/node</div><div class="line">sudo ln -s /opt/node-v6.9.4-linux-x64/bin/npm /usr/local/bin/npm</div></pre></td></tr></table></figure></p>
+<p>Now you can run <code>node -v</code> and <code>npm -v</code> to check it. You can find</p>
+<pre><code>v6.9.4
+3.10.10
+</code></pre><p>on your terminal if installed correctly</p>
+<h1 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h1><p>Use npm to install hexo and add a softlink.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g</div><div class="line">sudo ln -s /opt/node-v6.9.4-linux-x64/bin/hexo /usr/local/bin/hexo</div></pre></td></tr></table></figure></p>
+<p>At this time, when you type in <code>hexo -v</code>, you can see</p>
+<pre><code>hexo: 3.2.2
+hexo-cli: 1.0.2
+os: Linux 4.4.0-59-generic linux x64
+http_parser: 2.7.0
+node: 6.9.4
+v8: 5.1.281.89
+uv: 1.9.1
+zlib: 1.2.8
+ares: 1.10.1-DEV
+icu: 57.1
+modules: 48
+openssl: 1.0.2j
+</code></pre><h1 id="Start-Build-your-blog-with-hexo"><a href="#Start-Build-your-blog-with-hexo" class="headerlink" title="Start Build your blog with hexo"></a>Start Build your blog with hexo</h1><h2 id="Init-your-blog"><a href="#Init-your-blog" class="headerlink" title="Init your blog"></a>Init your blog</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">~$ hexo init your_blog_name</div><div class="line">~$ cd your_blog_name</div><div class="line">~/your_blog_name$ npm install</div><div class="line">~/your_blog_name$ hexo server</div></pre></td></tr></table></figure>
+<p>The codes above play these roles:</p>
+<ol>
+<li>init a folder to manage your blog, the whole content of your blog will be here</li>
+<li>enter blog directory</li>
+<li>install related components(I guess :D )</li>
+<li>start local server</li>
+</ol>
+<p>After all these, type <code>localhost:4000</code> in web browser’s address bar to visit the welcome page!</p>
+<h2 id="Qucik-start"><a href="#Qucik-start" class="headerlink" title="Qucik start"></a>Qucik start</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">hexo new &quot;your_article_title&quot;</div><div class="line">hexo server</div><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+<ol>
+<li>create a new article in your blog, edit it in the directory <code>/source/_posts</code>(Markdown supported).</li>
+<li>start local server for a preview</li>
+<li>according to previous modifies, generate static files in local space.</li>
+<li>deploy your website</li>
+</ol>
+<p>However, if you try to deploy it right now, there will be several mistakes.</p>
+<h2 id="Before-deployment"><a href="#Before-deployment" class="headerlink" title="Before deployment"></a>Before deployment</h2><p>Take github for example, open the file <code>_config.yml</code> in your blog directory, find the label <code># deploment</code> and edit it like the following:</p>
+<pre><code># Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: your_repository_address
+  branch: master
+</code></pre><p>and load git deployer package.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
+<p>The last step, make sure <code>git</code> installed on your ubuntu,run <code>git version</code> to check.If not,qucikly install it by <code>sudo apt install git</code></p>
+<p>If everything well-settled, now you can deploy your blog!<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
+<p>During the deployment,your github username and password would be asked.Remember <code>hexo generate</code> before every deployment,or nothing will change.</p>
+<p>PS:Once after <code>hexo deploy</code>, <code>fatal: Not a git repository (or any of the parent directories)</code> happened, delete the file <code>.deploy_git</code> and try it again will help.</p>
+<h1 id="Personalize-your-blog"><a href="#Personalize-your-blog" class="headerlink" title="Personalize your blog"></a>Personalize your blog</h1><p>You can change the theme of your blog freely. There will not be too much introduction here.  </p>
+<p>By the way,”Next” is a populer theme of hexo. You can learn more about it <a href="https://github.com/iissnan/hexo-theme-next/blob/master/README.en.md" target="_blank" rel="external">English Doc</a>/<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">Chinese Doc</a>.</p>
+
       
     </div>
 
@@ -561,7 +601,7 @@ sudo ln -s /opt/node-v6.9.4-linux-x64/bin/npm /usr/local/bin/npm
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-Node-js-and-npm"><span class="nav-number">1.</span> <span class="nav-text">Install Node.js and npm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Download-the-latest-package-on-the-official-website"><span class="nav-number">1.1.</span> <span class="nav-text">Download the latest package on the official website</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extract-the-package-and-install"><span class="nav-number">1.2.</span> <span class="nav-text">Extract the package and install</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-Git"><span class="nav-number">2.</span> <span class="nav-text">Install Git</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-Node-js-and-npm"><span class="nav-number">1.</span> <span class="nav-text">Install Node.js and npm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Download-the-latest-package-on-the-official-website"><span class="nav-number">1.1.</span> <span class="nav-text">Download the latest package on the official website</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extract-the-package-and-install"><span class="nav-number">1.2.</span> <span class="nav-text">Extract the package and install</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-Hexo"><span class="nav-number">2.</span> <span class="nav-text">Install Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Start-Build-your-blog-with-hexo"><span class="nav-number">3.</span> <span class="nav-text">Start Build your blog with hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Init-your-blog"><span class="nav-number">3.1.</span> <span class="nav-text">Init your blog</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Qucik-start"><span class="nav-number">3.2.</span> <span class="nav-text">Qucik start</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Before-deployment"><span class="nav-number">3.3.</span> <span class="nav-text">Before deployment</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Personalize-your-blog"><span class="nav-number">4.</span> <span class="nav-text">Personalize your blog</span></a></li></ol></div>
             
 
           </div>
