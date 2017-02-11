@@ -3,9 +3,16 @@
   
     
     <entry>
+      <title><![CDATA[How to run a .py file]]></title>
+      <url>%2F2017%2F01%2F29%2FHow-to-run-a-py-file%2F</url>
+      <content type="text"><![CDATA[Add #! /usr/bin/python3 at the first line of souce code to tell the system that you wish application python3 to run the program.To run this, for example, the directory of the code is ~/python/test.py, try the following:1$ ~/python/test.py or12$ cd ~/python~/python$ ./test.py If error permission denied posted, it means that you don’t have the permisson to run this file, you need to run ~/python$ chmod +x test.py to obtain the permisson to excute file test.py or just run ~$ chmod +x python/ so that you will get the permission to run all files in the folder ~/python.]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[Problems in learning Python]]></title>
       <url>%2F2017%2F01%2F27%2FProblems-in-learning-Python%2F</url>
-      <content type="text"><![CDATA[System:Ubuntu 16.04 LTSLanguage:Python3 Pyperclip could not find a copy/paste mechanism for your system ubuntuIt occurred when I tried to use pyperclip.copy() in a program.Here is an official referrence about this error. This page gives four suggestions to solve the problem. sudo apt-get install xsel to install the xsel utility.sudo apt-get install xclip to install the xclip utility.pip install gtk to install the gtk Python module.pip install PyQt4 to install the PyQt4 Python module. However, the third doesn’t work well on my computer. According to this Q&amp;A one year ago: One thing to note is that there are no gtk or pyqt4 modules available for Python 3 currently. At last, I made a choise to run sudo apt-get install xclip, and it worked well.]]></content>
+      <content type="text"><![CDATA[System:Ubuntu 16.04 LTSLanguage:Python3 Pyperclip could not find a copy/paste mechanism for your system ubuntuIt occurred when I tried to use pyperclip.copy() in a program.Here is an official referrence about this error. This page gives four suggestions to solve the problem. sudo apt-get install xsel to install the xsel utility.sudo apt-get install xclip to install the xclip utility.pip install gtk to install the gtk Python module.pip install PyQt4 to install the PyQt4 Python module. However, the third doesn’t work well on my computer. According to this Q&amp;A one year ago: One thing to note is that there are no gtk or pyqt4 modules available for Python 3 currently. At last, I made a choise to run sudo apt-get install xclip, and it worked well. Edit Geany template fileUse File -&gt; New (with Template) can build a source file with templates automaticly. To edit those template, enter the directory /usr/share/geany/templates/files, you can find the given templates and edit them, even create a new template if you want.]]></content>
     </entry>
 
     
